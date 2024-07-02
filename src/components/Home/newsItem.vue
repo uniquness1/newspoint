@@ -19,7 +19,7 @@
       </div>
       <div>
         <router-link
-          :to="`/news/${slug}`"
+          :to="`/news/${category.toLowerCase()}/${slug}`"
           class="text-white font-bold text-base text-wrap hover:underline"
         >
           {{ title }}

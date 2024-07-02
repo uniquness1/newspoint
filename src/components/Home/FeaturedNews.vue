@@ -59,7 +59,7 @@
               </div>
               <div>
                 <router-link
-                  :to="`/news/${news.slug}`"
+                  :to="`/news/${news.category.toLowerCase()}/${news.slug}`"
                   class="text-white font-bold text-base text-wrap hover:underline"
                 >
                   {{ news.title }}

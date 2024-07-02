@@ -14,16 +14,22 @@
           <div class="bg-white flex flex-col gap-1 px-4 py-2 w-[65%]">
             <div class="flex flex-nowrap items-center gap-4">
               <router-link
-                to="#"
+                :to="`/news/${news.category.toLowerCase()}`"
                 class="text-slate-800 uppercase font-bold text-sm max-w-max w-full px-2 py-2 bg-[#ffcc00]"
               >
                 {{ news.category }}
               </router-link>
-              <router-link to="#" class="text-slate-800 font-normal text-sm max-w-max w-full">
+              <router-link
+                :to="`/date/${news.date}`"
+                class="text-slate-800 font-normal text-sm max-w-max w-full"
+              >
                 {{ news.date }}
               </router-link>
             </div>
-            <router-link to="#" class="text-slate-800 font-bold text-sm text-wrap hover:underline">
+            <router-link
+              :to="`/news/${news.category.toLowerCase()}/${news.slug}`"
+              class="text-slate-800 font-bold text-sm text-wrap hover:underline"
+            >
               {{ news.title }}
             </router-link>
           </div>

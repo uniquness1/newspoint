@@ -29,7 +29,7 @@
             </router-link>
           </div>
           <router-link
-            :to="`/news/${news.slug}`"
+            :to="`/news/${news.category.toLowerCase()}/${news.slug}`"
             class="text-slate-800 font-bold text-[22px] leading-6 text-wrap hover:underline"
           >
             {{ news.title }}
@@ -62,7 +62,7 @@
               </router-link>
             </div>
             <router-link
-              :to="`/news/${news.slug}`"
+              :to="`/news/${news.category.toLowerCase()}/${news.slug}`"
               class="text-slate-800 font-bold text-[14px] leading-5 text-wrap hover:underline mt-2"
             >
               {{ news.title }}
@@ -99,7 +99,7 @@
           </router-link>
         </div>
         <router-link
-          :to="`/news/${singleNews.slug}`"
+          :to="`/news/${singleNews.category.toLowerCase()}/${singleNews.slug}`"
           class="text-slate-800 font-bold text-xl text-wrap hover:underline my-3"
         >
           {{ singleNews.title }}
@@ -108,7 +108,7 @@
       </div>
     </div>
     <AdsBanner />
-    <!-- news card second row -->
+    <!-- news card third row -->
     <div class="grid md:grid-cols-2 gap-4 py-5">
       <div v-for="(news, index) in thirdRowNews" :key="index">
         <div class="flex h-full">
@@ -131,7 +131,7 @@
               </router-link>
             </div>
             <router-link
-              :to="`/news/${news.slug}`"
+              :to="`/news/${news.category.toLowerCase()}/${news.slug}`"
               class="text-slate-800 font-bold text-[14px] leading-5 text-wrap hover:underline mt-2"
             >
               {{ news.title }}

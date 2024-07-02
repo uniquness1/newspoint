@@ -38,16 +38,13 @@
                   >
                     {{ slide.category }}
                   </router-link>
-                  <router-link
-                    :to="`/news/${slide.slug}`"
-                    class="text-white font-normal text-lg max-w-max w-full"
-                  >
+                  <router-link to="#" class="text-white font-normal text-lg max-w-max w-full">
                     {{ slide.date }}
                   </router-link>
                 </div>
                 <div>
                   <router-link
-                    :to="`/news/${slide.slug}`"
+                    :to="`/news/${slide.category.toLowerCase()}/${slide.slug}`"
                     class="text-white font-bold text-3xl text-wrap hover:underline"
                   >
                     {{ slide.title }}

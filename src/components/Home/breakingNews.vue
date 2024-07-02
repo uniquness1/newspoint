@@ -22,7 +22,7 @@
         <swiper-slide v-for="(news, index) in breakingNews" :key="index">
           <div>
             <router-link
-              :to="`/news/${news.slug}`"
+              :to="`/news/${news.category.toLowerCase()}/${news.slug}`"
               class="text-white text-sm md:text-base xl:text-lg font-normal uppercase hover:underline"
             >
               {{ news.title }}
@@ -33,7 +33,6 @@
     </div>
   </section>
 </template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import { A11y, Autoplay } from 'swiper/modules'
@@ -46,7 +45,17 @@ const modules = [A11y, Autoplay]
 const breakingNews = ref([])
 
 onMounted(() => {
-  breakingNews.value = newsList.filter((news) => news.category === 'Breaking')
+  const breakingCategory = 'Breaking'.toLowerCase()
+  breakingNews.value = newsList
+    .filter((news) => news.category.toLowerCase() === breakingCategory)
+    .map((news) => ({
+      title: news.title,
+      category: news.category,
+      slug: news.slug
+    }))
+
+  // Debugging
+  console.log('Breaking News:', breakingNews.value)
 })
 </script>
 
