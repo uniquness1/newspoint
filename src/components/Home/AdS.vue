@@ -6,7 +6,7 @@
       <h1 class="text-3xl font-semibold max-w-max text-slate-800">ADVERTISEMENT</h1>
     </div>
     <div class="bg-white p-5 h-[250px] w-full">
-      <img class="h-full w-full object-cover" src="../../../images/ads.jpg" alt="" />
+      <img class="h-full w-full object-cover" src="/images/ads.jpg" alt="" />
     </div>
   </section>
 </template>
