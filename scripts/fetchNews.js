@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-const API_KEY = 'd3e8e6bcc65f4153a166d0caf65a8939'
+const API_KEY = import.meta.env.VITE_NEWS_API_KEY
 const URL = `https://newsapi.org/v2/top-headlines?apiKey=${API_KEY}&country=ng`
 
 const __filename = fileURLToPath(import.meta.url)
